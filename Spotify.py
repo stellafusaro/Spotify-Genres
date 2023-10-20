@@ -11,8 +11,8 @@ import string
 from urllib.parse import urlencode
 import base64
 import webbrowser
-client_id = '8f739181617c4055be70e61f0975752e'
-client_secret = '0137655ca07e4b189bd956705ef37ec4'
+client_id = 'your client id'
+client_secret = 'your client secret'
 
 
 
@@ -38,7 +38,7 @@ webbrowser.open("https://accounts.spotify.com/authorize?" + urlencode(data))
 # In[43]:
 
 
-code = 'AQAABxD54guA25khFRWNytOLurgndsYAPS1aMx6E2c8oMYMm0JLgd1SgkF06d9a4EtGAXTN_mAc4qZZbgS8katuVfvbPhxOPhN_638ExENYCXiZ4VFsQGF1T-qCKAKUNp4ni3pFFlL0tCkLbo8SzN2_3dnCgWcIOxWDueosUrcduv7WoOHMEjYm6kWyvjyhWdyM'
+code = 'your code'
 
 
 # In[44]:
@@ -64,17 +64,7 @@ print(auth_response.json())
 # In[4]:
 
 
-user_id = "vasearcy"
-endpoint_url = f"https://api.spotify.com/v1/users/{user_id}/playlists"
-request_body = json.dumps({
-          "name": "Top Tree",
-          "description": "Top three songs by each artist listened to.",
-          "public": False # let's keep it between us - for now
-        })
-response = requests.post(url = endpoint_url, data = request_body, headers={"Content-Type":"application/json", 
-                        "Authorization": f"Bearer {access_token}"})
-playlist_id = response.json()['id']
-print(response.json())
+
 
 
 # In[34]:
